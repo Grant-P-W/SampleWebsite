@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
+
+.header {
+	background-color: #2b343d;
+	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+	padding: 20px 40px;
+	height: 80px;
+	box-sizing: border-box;
+
+	font-family: 'Titillium Web';
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+}
+
+.header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* Logo */
+
+.header-logo {
+	float: left;
+	height: 75px;
+	margin: -20px;
+}
+
+/* The header links */
+
+.nav {
+	line-height: 40px;
+	float: right;
+	margin-top: 0px;
+}
+
+.nav * {
+	box-sizing: border-box;
+	transition: all .35s ease;
+}
+
+.nav li {
+	display: inline-block;
+	list-style: outside none none;
+	/* margin: .5em 1em; */
+	padding: 0;
+}
+
+.nav a {
+	padding: 0 15px;
+	color: rgba(255,255,255,.5);
+	position: relative;
+	text-decoration: none;
+	font-size: 16px;
+  }
+  
+  .nav a::before,
+  .nav a::after {
+	content: '';
+	height: 14px;
+	width: 14px;
+	position: absolute;
+	margin: -5px 0;
+	transition: all .2s ease;
+	opacity: 0;
+  }
+  
+  .nav a::before {
+	content: '';
+	right: 0;
+	top: 0;
+	border-top: 3px solid #1552c4;
+	border-right: 3px solid #2043e0;
+	transform: translate(-100%, 50%);
+  }
+  
+  .nav a:after {
+	content: '';
+	left: 0;
+	bottom: 0;
+	border-bottom: 3px solid #2043e0;
+	border-left: 3px solid #1552c4;
+	transform: translate(100%, -50%)
+  }
+  
+  .nav a:hover:before,
+  .nav a:hover:after{
+	transform: translate(0,0);
+	opacity: 1;
+  }
+  
+  .nav a:hover {
+	color: #348de0;
+  }
+
+/* .header a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.header nav{
+	line-height: 40px;
+	float: right;
+}
+
+.header nav a{
+	display: inline-block;
+	padding: 0 5px;
+	text-decoration:none;
+	color: #ffffff;
+	font-size: 16px;
+	opacity: 0.9;
+}
+
+.header nav a:hover{
+	opacity: 1;
+}
+
+.header nav a.selected {
+	color: #608bd2;
+	pointer-events: none;
+	opacity: 1;
+} */
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+	.header {
+		padding: 20px 0;
+		height: 75px;
+	}
+
+	/* .header .header-limiter h1 {
+		float: none;
+		margin: -8px 0 10px;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1;
+	} */
+
+	.header nav {
+		line-height: 1;
+		float:none;
+	}
+
+	.header nav a {
+		font-size: 13px;
+	}
+
+}
+
+/* For the headers to look good, be sure to reset the margin and padding of the body */
+
+body {
+	margin:0;
+	padding:0;
+
+	background: #838383;
+}
