@@ -11,8 +11,10 @@ body, html{
 }
 .gallery{
   width: fit-content;
-  margin: 20px auto;
+  margin: 10px auto;
   height: auto;
+
+  padding: 50px;
 }
 .gallery .container{
   width: calc(33% - 6px);
