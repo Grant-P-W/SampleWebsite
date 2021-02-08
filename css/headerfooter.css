@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
 
 .header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+
 	flex-shrink: 0;
 	background-color: #2b343d;
 	box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
-	padding: 20px 40px;
+	padding: 0 40px;
 	height: 80px;
 	box-sizing: border-box;
 
@@ -17,7 +21,7 @@
 .header-limiter {
 	max-width: 1200px;
 	text-align: center;
-	margin: 0 auto;
+	margin: auto;
 }
 
 /* Logo */
@@ -25,7 +29,7 @@
 .header-logo {
 	float: left;
 	height: 75px;
-	margin: -20px;
+	margin-left: 20px;
 }
 
 /* The header links */
@@ -33,30 +37,35 @@
 .nav {
 	line-height: 40px;
 	float: right;
-	margin-top: 0px;
+	margin:  auto;
+	text-align: center;
+	overflow: hidden;
+	background-color: #2b343dec;
+	transition: transform .35s ease;
+}
+
+.header .icon{
+	visibility: hidden;
+	color: rgba(255,255,255,.5);
 }
 
 .nav * {
 	box-sizing: border-box;
-	transition: all .35s ease;
-}
-
-.nav li {
-	display: inline-block;
-	list-style: outside none none;
-	padding: 0;
 }
 
 .nav a {
+	display: inline-block;
 	padding: 0 15px;
+	margin: 20px 0;
 	color: rgba(255,255,255,.5);
 	position: relative;
 	text-decoration: none;
 	font-size: 16px;
-  }
-  
-  .nav a::before,
-  .nav a::after {
+}
+/* .nav a:not(:last-child){ transition: all .35s ease; } */
+
+.nav a::before,
+.nav a::after {
 	content: '';
 	height: 14px;
 	width: 14px;
@@ -64,54 +73,34 @@
 	margin: -5px 0;
 	transition: transform .2s ease;
 	opacity: 0;
-  }
-  
-  .nav a::before {
+}
+
+.nav a::before {
 	content: '';
 	right: 0;
 	top: 0;
 	border-top: 3px solid #1552c4;
 	border-right: 3px solid #2043e0;
 	transform: translate(-100%, 50%);
-  }
-  
-  .nav a:after {
+}
+
+.nav a:after {
 	content: '';
 	left: 0;
 	bottom: 0;
 	border-bottom: 3px solid #2043e0;
 	border-left: 3px solid #1552c4;
 	transform: translate(100%, -50%)
-  }
-  
-  .nav a:hover:before,
-  .nav a:hover:after{
+}
+
+.nav a:hover:before,
+.nav a:hover:after{
 	transform: translate(0,0);
 	opacity: 1;
-  }
-  
-  .nav a:hover {
-	color: #348de0;
-  }
+}
 
-/* Making the header responsive */
-
-@media all and (max-width: 600px) {
-
-	.header {
-		padding: 20px 0;
-		height: 75px;
-	}
-
-	.header nav {
-		line-height: 1;
-		float: none;
-	}
-
-	.header nav a {
-		font-size: 13px;
-	}
-
+.nav a:hover {
+color: #348de0;
 }
 
 body {
@@ -131,7 +120,9 @@ body {
 	flex-grow: 1;
 	min-height: 100%;
 	position: relative;
-	padding: 20px;
+	margin: 20px;
+	margin-top: 70px;
+	padding: 50px;
 	padding-bottom: 50px;
 }
 
@@ -159,4 +150,64 @@ body {
 
 .footer a:hover {
 	color: #bec7d3;
+}
+
+
+/* Responsive */
+
+@media all and (max-width: 650px) {
+
+	.content{
+		padding-top: -10px;
+		padding: 10px;
+	}
+
+	/* Header */
+	.header {
+		padding: 0;
+		height: 75px;
+	}
+
+	.header-logo {
+		height: 55px;
+		margin-top: 13px;
+	}
+
+	.header .icon {
+		visibility: inherit;
+		float: right;
+		display: inherit;
+		font-size: 20px;
+		padding: 20px;
+
+		position: absolute;
+		margin-top: 0px;
+		padding-top: 40px;
+		right: 0px;
+		top: -20px;
+	}
+
+	.nav {
+		transform: translate(100vw, 0px);
+	}
+
+	.nav a {
+		margin: 0;
+		padding: 20px;
+		float: none;
+		display: block;
+		position: relative;
+		text-align: left;
+		width: 100vw;
+	}
+
+	.nav.responsive {
+		transform: translate(0px, 0px);
+	}
+
+	/* Footer */
+
+	.footer a{
+		font-size: .4em;
+	}
 }

@@ -5,17 +5,18 @@ body, html{
   font-family: 'Poppins', sans-serif;
   color: #d3d3d3;
 }
+
 .gallery h1{
   text-align: center;
   color:white;
 }
+
 .gallery{
   width: fit-content;
   margin: 10px auto;
   height: auto;
-
-  padding: 50px;
 }
+
 .gallery .container{
   width: calc(33% - 6px);
   overflow:hidden;
@@ -26,14 +27,16 @@ body, html{
   position:relative;
   float:left;
 }
+
 .gallery img{
   width: 100%;
-  transition-duration: .3s;
+  transition-duration: .5s;
   max-width: 100%;
   display:block;
   overflow:hidden;
   cursor:pointer;
 }
+
 .gallery .title{
   position:absolute;
   display:block;
@@ -48,7 +51,9 @@ body, html{
   text-shadow: 1px 5px 10px black;
   transition-duration: .3s;
   padding: 7%;
+  margin-top: -7%;
 }
+
 .gallery .text{
   position:absolute;
   top: 70%;
@@ -63,24 +68,42 @@ body, html{
   transition-duration: .3s;
   transform: translate(-50%, -50%) 
 }
+
 .gallery .container:hover img{
   transform: scale(1.2);
   transition-duration: .3s;
   filter: grayscale(50%);
   opacity: .7;
 }
+
 .gallery .container:hover span{
   color:white;
   display: block;
   transition-duration: .3s;
 }
+
 @media only screen and (max-width: 900px) {
     .gallery .container {
         width: calc(50% - 6px);
     }
 }
+
 @media only screen and (max-width: 400px) {
     .gallery .container {
         width: 100%;
     }
+}
+
+@media all and (max-width: 600px) {
+  .gallery{
+    margin: 0px auto;
+  }
+
+  .gallery .title{
+    font-size: .9em;
+  }
+
+  .gallery .text{
+    font-size: .5em;
+  }
 }

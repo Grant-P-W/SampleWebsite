@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Sample Website</title>
 
 	<link rel="stylesheet" href="css/headerfooter.css">
 	<link rel="stylesheet" href="css/gallery.css">
 
+	<script src="JS/navbar.js"></script>
 	<script src="https://kit.fontawesome.com/7af3fada1b.js" crossorigin="anonymous"></script>
 </head>
 
@@ -12,20 +15,22 @@
 	<header class="header">
 		<div class="header-limiter">
 			<a href="#"><img src="Assets/ISL-logo.jpg" class="header-logo"></a>
-			<ul class="nav">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">Contact</a></li>
-			  </ul>
+			<div class="nav" id="navbar">
+				<a href="#">Home</a>
+				<a href="#">Blog</a>
+				<a href="#">About</a>
+				<a href="#">FAQ</a>
+				<a href="#">Contact</a>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="navbarMenu(document.getElementById('navbar'))">
+				<i class="fa fa-bars"></i>
+			</a>
 		</div>
 	</header>
 
 
 	<div class="content">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- <h1>Top Stories:</h1> -->
+		<h1>Top Stories:</h1>
 		<div class="gallery">
 			<div class="container">
 				<img src="Assets/danas-rapsys-energy-700x500.webp" alt="">
@@ -36,7 +41,7 @@
 			<div class="container">
 				<img src="Assets/Caeleb-Dressel-Cali-Condors-sets-WR-100IM-ISL-by-Mike-Lewis-D5D_0163-700x500.webp" alt="">
 				<span class="title">Caeleb Dressel’s 100 IM World Record</span>
-				<span class="text">Dressel’s insane 100 IM time of 49.28 stole all but his teamates points</span>
+				<span class="text">Dressel’s insane 100 IM time of 49.28 stole all but his teamate's points</span>
 			</div>
 
 			<div class="container">
@@ -63,6 +68,7 @@
 				<span class="text"> Siobhan Haughey won every single 200 freestyle race she was in culminating in a 1:51.11</span>
 			</div>
 		</div>
+
 	</div>
 
 
